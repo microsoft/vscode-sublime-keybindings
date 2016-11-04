@@ -389,6 +389,69 @@
                 "linux": "ctrl+shift+r",
                 "key": "ctrl+shift+r",
                 "command": "workbench.action.showAllSymbols"
+            },
+            {
+                "mac": "cmd+1",
+                "win": "alt+1",
+                "linux": "alt+1",
+                "key": "alt+1",
+                "command": "workbench.action.openEditorAtIndex1"
+            },
+            {
+                "mac": "cmd+2",
+                "win": "alt+2",
+                "linux": "alt+2",
+                "key": "alt+2",
+                "command": "workbench.action.openEditorAtIndex2"
+            },
+            {
+                "mac": "cmd+3",
+                "win": "alt+3",
+                "linux": "alt+3",
+                "key": "alt+3",
+                "command": "workbench.action.openEditorAtIndex3"
+            },
+            {
+                "mac": "cmd+4",
+                "win": "alt+4",
+                "linux": "alt+4",
+                "key": "alt+4",
+                "command": "workbench.action.openEditorAtIndex4"
+            },
+            {
+                "mac": "cmd+5",
+                "win": "alt+5",
+                "linux": "alt+5",
+                "key": "alt+5",
+                "command": "workbench.action.openEditorAtIndex5"
+            },
+            {
+                "mac": "cmd+6",
+                "win": "alt+6",
+                "linux": "alt+6",
+                "key": "alt+6",
+                "command": "workbench.action.openEditorAtIndex6"
+            },
+            {
+                "mac": "cmd+7",
+                "win": "alt+7",
+                "linux": "alt+7",
+                "key": "alt+7",
+                "command": "workbench.action.openEditorAtIndex7"
+            },
+            {
+                "mac": "cmd+8",
+                "win": "alt+8",
+                "linux": "alt+8",
+                "key": "alt+8",
+                "command": "workbench.action.openEditorAtIndex8"
+            },
+            {
+                "mac": "cmd+9",
+                "win": "alt+9",
+                "linux": "alt+9",
+                "key": "alt+9",
+                "command": "workbench.action.openEditorAtIndex9"
             }
         ]
     },
