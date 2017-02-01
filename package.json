@@ -253,11 +253,19 @@
                 "when": "editorFocus"
             },
             {
-                "mac": "cmd+alt+f",
+                "mac": "cmd+shift+f",
+                "win": "ctrl+shift+h",
+                "linux": "ctrl+shift+h",
+                "key": "ctrl+shift+h",
+                "command": "workbench.action.replaceInFiles"
+            },
+            {
+                "mac": "cmd+f",
                 "win": "ctrl+h",
                 "linux": "ctrl+h",
                 "key": "ctrl+h",
-                "command": "workbench.action.replaceInFiles"
+                "command": "editor.action.startFindReplaceAction",
+                "when": "editorTextFocus"
             },
             {
                 "mac": "ctrl+shift+k",
