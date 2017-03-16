@@ -197,6 +197,13 @@
                 "key": "ctrl+k ctrl+down",
                 "command": "workbench.action.closeActiveEditor"
             },
+              {
+                "mac": "cmd+k cmd+j",
+                "win": "ctrl+k ctrl+j",
+                "linux": "ctrl+k ctrl+j",
+                "key": "ctrl+k ctrl+j",
+                "command": "workbench.action.closeActiveEditor"
+            },
             {
                 "mac": "alt+cmd+[",
                 "key": "ctr+shift+[",
