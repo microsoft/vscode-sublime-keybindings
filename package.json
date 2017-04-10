@@ -469,6 +469,11 @@
                 "key": "ctrl+k p",
                 "command": "editor.action.marker.prev",
                 "when": "editorFocus"
+            },{
+                "mac": "cmd+backspace",
+                "key": "none",
+                "command": "editor.action.deleteLines",
+                "when": "editorFocus"
             }
         ]
     },
