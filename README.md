@@ -2,30 +2,6 @@
 
 This extension ports the most popular Sublime Text keyboard shortcuts to Visual Studio Code. After installing the extension and restarting VS Code your favorite keyboard shortcuts from Sublime Text are now available. 
 
-## Changes Introduced in Version 3.0
-
-- Multi cursor editing changed from <kbd>alt</kbd> + click to <kbd>ctrl</kbd> (or <kbd>cmd</kbd>) + click. 
-- Enable format on paste. 
-- Change snippet suggestions to be at the top of the completion list. 
-
-All of these features make VS Code more "Sublime Text like." The changes to your User Settings file are as followed. 
-
-```javascript
-// Controls whether the prompt will show
-"sublimeTextKeymap.promptV3Features": true,
-
-// Changes the multi cursor mouse binding
-"editor.multiCursorModifier": "ctrlCmd",
-
-// Specifies the location of snippets in the suggestion widget
-"editor.snippetSuggestions": "top",
-
-// Controls whether format on paste is on or off
-"editor.formatOnPaste": true
-```
-
->**Tip:** If you want to see the prompt again simply change `sublimeTextKeymap.promptV3Features` to `false` and restart VS Code. 
-
 ## What keyboard shortcuts are included?
 
 You can see all the keyboard shortcuts in the extension's contribution list. 

@@ -84,12 +84,12 @@ class View {
 }
 
 const activate = () => {
-    const editorConfig = vscode.workspace.getConfiguration('editor');
-    const updateSetting = new VersionThreeUpdateSetting();
+    // const editorConfig = vscode.workspace.getConfiguration('editor');
+    // const updateSetting = new VersionThreeUpdateSetting();
 
-    if (!updateSetting.hasPrompted && isDefaultValueSet(editorConfig, versionThreeSettings)) {
-        new View(updateSetting, editorConfig).showMessage();
-    }
+    // if (!updateSetting.hasPrompted && isDefaultValueSet(editorConfig, versionThreeSettings)) {
+    //     new View(updateSetting, editorConfig).showMessage();
+    // }
 }
 
 module.exports = { activate };
