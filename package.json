@@ -453,6 +453,10 @@
                 "key": "ctrl+k p",
                 "command": "editor.action.marker.prev",
                 "when": "editorFocus"
+            },
+            {
+                "key": "f9",
+                "command": "editor.action.sortLinesAscending"
             }
         ],
         "configuration": {
