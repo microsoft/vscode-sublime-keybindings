@@ -8,7 +8,7 @@ This extension ports the most popular Sublime Text keyboard shortcuts to Visual 
 - Enable format on paste. 
 - Change snippet suggestions to be at the top of the completion list. 
 
-All of these features make VS Code more "Sublime Text like." The changes to your User Settings file are as followed. 
+All of these features make VS Code more *Sublime*. The changes to your User Settings file are as followed. 
 
 ```javascript
 // Controls whether the prompt will show
