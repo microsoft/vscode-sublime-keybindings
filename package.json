@@ -492,7 +492,22 @@
                 "command": "deleteAllRight",
                 "key": "ctrl+k ctrl+k",
                 "when": "editorTextFocus && !editorReadonly"
-            }            
+            },
+            {
+                "mac": "cmd+e",
+                "win": "ctrl+e",
+                "linux": "ctrl+e",
+                "command": "slurp_find_string",
+                "key": "ctrl+e"
+            },
+            {
+                "mac": "cmd+shift+enter",
+                "win": "ctrl+shift+enter",
+                "linux": "ctrl+shift+enter",
+                "keys": "ctrl+shift+enter",
+                "command": "run_macro_file",
+                "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"}
+            }
         ],
         "configuration": {
             "type": "object",
