@@ -492,7 +492,15 @@
                 "command": "deleteAllRight",
                 "key": "ctrl+k ctrl+k",
                 "when": "editorTextFocus && !editorReadonly"
-            }            
+            },
+            {
+                "mac": "alt+numpad_subtract",
+                "win": "alt+numpad_subtract",
+                "linux": "alt+numpad_subtract",
+                "key": "alt+numpad_subtract",
+                "command": "cursorUndo",
+                "when": "editorTextFocus"
+            }
         ],
         "configuration": {
             "type": "object",
