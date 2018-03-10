@@ -36,6 +36,14 @@
                 "command": "workbench.action.toggleZenMode"
             },
             {
+                "mac": "cmd+shift+a",
+                "win": "ctrl+shift+a",
+                "linux": "ctrl+shift+a",
+                "key": "ctrl+shift+a",
+                "command": "editor.action.smartSelect.grow",
+                "when": "editorTextFocus"
+            },
+            {
                 "mac": "cmd+w",
                 "win": "ctrl+w",
                 "linux": "ctrl+w",
