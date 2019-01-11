@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { readFileAsync } from './fsWrapper';
 import { Mapper } from './mapper';
+import { duplicateAction } from './actions';
 import { ISetting, MappedSetting, CategorizedSettings, VscodeSetting } from './settings';
 import * as sublimeFolderFinder from './sublimeFolderFinder';
 import * as path from 'path';
@@ -14,6 +15,9 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
         await showPrompt();
         await context.globalState.update('alreadyPrompted', true);
     }
+
+    // register custom commands
+    context.subscriptions.push(vscode.commands.registerTextEditorCommand("extension.duplicate", duplicateAction));
 }
 
 async function showPrompt(): Promise<void> {

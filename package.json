@@ -239,7 +239,7 @@
                 "win": "ctrl+shift+d",
                 "linux": "ctrl+shift+d",
                 "key": "ctrl+shift+d",
-                "command": "editor.action.copyLinesDownAction",
+                "command": "extension.duplicate",
                 "when": "editorFocus"
             },
             {
