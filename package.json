@@ -535,7 +535,14 @@
                 "command": "editor.action.smartSelect.grow",
                 "key": "ctrl+shift+space",
                 "when": "editorTextFocus"
-            }
+            },
+            {
+                "mac": "<keyboard shortcut for mac>",
+                "win": "<keyboard shortcut for windows>",
+                "linux": "<keyboard shortcut for linux>",
+                 "key": "<default keyboard shortcut>",
+                "command": "<nameof the command in VS Code>"
+            },
         ]
     }
 }
