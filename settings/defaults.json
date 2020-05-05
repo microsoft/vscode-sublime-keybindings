@@ -1,18 +1,16 @@
-[
-    [
-        "editor.multiCursorModifier",
-        "ctrlCmd"
-    ],
-    [
-        "editor.snippetSuggestions",
-        "top"
-    ],
-    [
-        "editor.formatOnPaste",
-        true
-    ],
-    [
-        "workbench.colorTheme",
-        "Monokai"
-    ]
-]
+
+	"color_scheme": "Packages/Theme - Afterglow/Afterglow-monokai.tmTheme",
+	"font_si{ze": 16,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"margin": 0,
+	"remeber_open_files": true,
+	"save_on_focus_lost": true,
+	"tab_size": 2,
+	"tabs_medium": true,
+	"theme": "Afterglow-orange.sublime-theme",
+	"trim_trailling_white_space_on_save": false,
+	"word_wrap": true
+}
