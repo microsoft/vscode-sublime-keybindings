@@ -1,18 +1,150 @@
 [
-    [
-        "editor.multiCursorModifier",
-        "ctrlCmd"
-    ],
-    [
-        "editor.snippetSuggestions",
-        "top"
-    ],
-    [
-        "editor.formatOnPaste",
-        true
-    ],
-    [
-        "workbench.colorTheme",
-        "Monokai"
-    ]
+	{
+		"keys": ["alt+x"],
+		"command": "reindent",
+		"args": {
+			"single_line": false
+		}
+	},
+	{
+		"keys": ["alt+p"],
+		"command": "insert",
+		"args": {
+			"characters": "p.text-center>b>small"
+		}
+	},
+	{
+		"keys": ["alt+c"],
+		"command": "insert",
+		"args": {
+			"characters": "p.text-center.paddingB"
+		}
+	},
+	{
+		"keys": ["alt+n"],
+		"command": "insert",
+		"args": {
+			"characters": "class=\"notsvg\""
+		}
+	},
+	{
+		"keys": ["alt+k", "alt+i"],
+		"command": "insert",
+		"args": {
+			"characters": "<div id=\"smooth-scroll\">\n<img src=\"\" id=\"cover\" onload=\"setSmoothScrollCover(this)\">\n</div>"
+		}
+	},
+	{
+		"keys": ["alt+1"],
+		"command": "insert",
+		"args": {
+			"characters": ".w-md-2.marginTB+.w-md-10.marginTB"
+		}
+	},
+	{
+		"keys": ["alt+w"],
+		"command": "insert",
+		"args": {
+			"characters": ".w-md-12.marginTB+.clearfix"
+		}
+	},
+	{
+		"keys": ["alt+k", "alt+1"],
+		"command": "insert",
+		"args": {
+			"characters": ".w-md-1.marginTB+.w-md-10.marginTB+.w-md-1.marginTB"
+		}
+	},
+	{
+		"keys": ["alt+2"],
+		"command": "insert",
+		"args": {
+			"characters": "<br>"
+		}
+	},
+	{
+		"keys": ["alt+3"],
+		"command": "insert",
+		"args": {
+			"characters": "<div class=\"content-img marginB\">\n<img src=\"\" alt=\"\">\n</div>"
+		}
+	},
+	{
+		"keys": ["alt+a"],
+		"command": "insert_snippet",
+		"args": {
+			"contents": "<a href=\"\">$SELECTION</a>"
+		}
+	},
+	{
+		"keys": ["alt+k", "alt+a"],
+		"command": "insert_snippet",
+		"args": {
+			"contents": "<a href=\"$SELECTION\">$SELECTION</a>"
+		}
+	},
+	{
+		"keys": ["alt+h", "alt+a"],
+		"command": "insert_snippet",
+		"args": {
+			"contents": "<a href=\"https://$SELECTION\">$SELECTION</a>"
+		}
+	},
+	{
+		"keys": ["alt+m", "alt+a"],
+		"command": "insert_snippet",
+		"args": {
+			"contents": "<a href=\"mailto:$SELECTION\">$SELECTION</a>"
+		}
+	},
+	{
+		"keys": ["alt+t", "alt+a"],
+		"command": "insert_snippet",
+		"args": {
+			"contents": "<a href=\"tel:$SELECTION\">$SELECTION</a>"
+		}
+	},
+	{
+		"keys": ["alt+b"],
+		"command": "insert_snippet",
+		"args": {
+			"contents": "<b>$SELECTION</b>"
+		}
+	},
+	{
+		"keys": ["alt+i"],
+		"command": "insert_snippet",
+		"args": {
+			"contents": "<i>$SELECTION</i>"
+		}
+	},
+	{
+		"keys": ["alt+s"],
+		"command": "insert_snippet",
+		"args": {
+			"contents": "<small>\n$SELECTION\n</small>"
+		}
+	},
+	{
+		"keys": ["alt+d"],
+		"command": "insert_snippet",
+		"args": {
+			"contents": "<span class=\"first-character\">\n$SELECTION\n</span>"
+		}
+	},
+	{
+		"keys": ["alt+k", "alt+3"],
+		"command": "insert_snippet",
+		"args": {
+			"contents": "<div class=\"content-img\">\n$SELECTION\n</div>"
+		}
+	},
+	{
+		"keys": ["alt+4"],
+		"command": "insert_snippet",
+		"args": {
+			"contents": "<div class=\"section-box\">\n<div class=\"bg-wrap\">\n<div class=\"bg\" style=\"background-image: url(0/1.jpg)\"></div></div>\n</div>"
+		}
+	},
+	{ "keys": ["alt+5"], "command": "side_bar_move" }
 ]
