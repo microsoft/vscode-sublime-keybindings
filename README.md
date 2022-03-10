@@ -17,7 +17,7 @@ If you want to import your settings at a later time use the `Sublime Text Keymap
 
 The included keyboard shortcuts can be looked up in the `Feature Contributions`. 
 
-![extension contributions](.readme/contributions_list.png)
+![extension contributions](.readme/feature_contributions.png)
 
 ### Why don't all Sublime Text commands work? 
 
