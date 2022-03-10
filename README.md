@@ -15,7 +15,7 @@ If you want to import your settings at a later time use the `Sublime Text Keymap
 ## FAQ
 ### What keyboard shortcuts are included?
 
-The included keyboard shortcuts can be looked up in the [contribution list](https://code.visualstudio.com/docs/editor/extension-gallery#_extension-details). 
+The included keyboard shortcuts can be looked up in the `Feature Contributions`. 
 
 ![extension contributions](.readme/contributions_list.png)
 
