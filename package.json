@@ -18,7 +18,7 @@
         "Sublime Text"
     ],
     "activationEvents": [
-        "*",
+        "onStartupFinished",
         "onCommand:extension.importFromSublime"
     ],
     "main": "./dist/extension.js",
