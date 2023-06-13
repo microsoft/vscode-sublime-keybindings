@@ -26,3 +26,5 @@ extends:
     buildSteps:
       - script: npm ci
         displayName: Install dependencies
+
+    publishExtension: ${{ parameters.publishExtension }}
