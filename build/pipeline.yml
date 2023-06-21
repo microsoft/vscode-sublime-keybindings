@@ -27,4 +27,16 @@ extends:
       - script: npm ci
         displayName: Install dependencies
 
-    publishExtension: ${{ parameters.publishExtension }}
+    tsa:
+      enabled: true
+      options:
+        codebaseName: 'devdiv_$(Build.Repository.Name)'
+        serviceTreeID: 'b43346cb-06b1-4256-97a5-9aaa18eaff90'
+        instanceUrl: 'https://devdiv.visualstudio.com/defaultcollection'
+        projectName: 'DevDiv'
+        areaPath: 'DevDiv\\VS Code (compliance tracking only)\\Visual Studio Code Keybinding Extensions'
+        notificationAliases:
+          - 'stbatt@microsoft.com'
+          - 'lszomoru@microsoft.com'
+
+  publishExtension: ${{ parameters.publishExtension }}
