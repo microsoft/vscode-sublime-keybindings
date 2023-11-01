@@ -586,5 +586,10 @@
                 "when": "editorTextFocus"
             }
         ]
+    },
+    "capabilities": {
+        "untrustedWorkspaces": {
+        "supported": true
     }
+}
 }
