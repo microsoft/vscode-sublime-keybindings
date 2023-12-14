@@ -18,8 +18,14 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
 }
 
 async function showPrompt(): Promise<void> {
-    const answer: string | undefined = await vscode.window.showInformationMessage('Would you like to customize VS Code to behave more like Sublime Text?', 'Yes', 'No');
-    if (answer && answer === 'Yes') {
+    const yes = vscode.l10n.t('Yes');
+    const no = vscode.l10n.t('No');
+    const answer: string | undefined = await vscode.window.showInformationMessage(
+        vscode.l10n.t('Would you like to customize VS Code to behave more like Sublime Text?'),
+        yes,
+        no,
+    );
+    if (answer && answer === yes) {
         start();
     }
 }
@@ -34,7 +40,7 @@ async function start(): Promise<void> {
                 await vscode.commands.executeCommand('workbench.action.openGlobalSettings');
             }
         } else {
-            vscode.window.showInformationMessage('Nothing to import. All settings have already been imported');
+            vscode.window.showInformationMessage(vscode.l10n.t('Nothing to import. All settings have already been imported'));
         }
     }
 }
@@ -52,24 +58,38 @@ async function getSublimeFolderPath(): Promise<string | undefined> {
     if (sublimeSettingsPath) {
         return sublimeSettingsPath.fsPath;
     }
-    return await browsePrompt(`No Sublime settings file found at the default location: ${path.join(sublimeFolderFinder.getOSDefaultPaths()[0], sublimeFolderFinder.sublimeSettingsFilename)} `);
+    return await browsePrompt(
+        vscode.l10n.t(
+            'No Sublime settings file found at the default location: {0}',
+            path.join(sublimeFolderFinder.getOSDefaultPaths()[0], sublimeFolderFinder.sublimeSettingsFilename)
+        )
+    );
 }
 
 async function browsePrompt(msg: string): Promise<string | undefined> {
-    const result = await vscode.window.showInformationMessage(msg, 'Browse...');
-    if (result) {
-        const sublimeSettingsFiles = await vscode.window.showOpenDialog({ canSelectFiles: true });
-        if (sublimeSettingsFiles && sublimeSettingsFiles.length) {
-            const filePath = sublimeSettingsFiles[0].fsPath;
-            const isValidFilePath = await validate(filePath);
-            if (isValidFilePath) {
-                return filePath;
-            } else {
-                vscode.window.showErrorMessage(`Could not find ${sublimeFolderFinder.sublimeSettingsFilename} at ${sublimeSettingsFiles[0].fsPath} `);
-            }
-        }
+    const result = await vscode.window.showInformationMessage(msg, vscode.l10n.t('Browse...'));
+    if (!result) {
+        return undefined;
     }
-    return undefined;
+    const sublimeSettingsFiles = await vscode.window.showOpenDialog({ canSelectFiles: true });
+    if (!sublimeSettingsFiles || !sublimeSettingsFiles.length) {
+        return undefined;
+
+    }
+    const filePath = sublimeSettingsFiles[0].fsPath;
+    const isValidFilePath = await validate(filePath);
+    if (isValidFilePath) {
+        return filePath;
+    } else {
+        vscode.window.showErrorMessage(
+            vscode.l10n.t({
+                message: 'Could not find {0} at {1}',
+                args: [sublimeFolderFinder.sublimeSettingsFilename, sublimeSettingsFiles[0].fsPath],
+                comment: ['{0} is a filename, {1} is a path']
+            })
+        );
+        return undefined;
+    }
 }
 
 function validate(settingsFilePath: string): boolean {
@@ -109,7 +129,7 @@ function setting2QuickPickItem(setting: VscodeSetting, sublimeName?: string): IS
     const icons = { exclamationPoint: '$(issue-opened)', arrowRight: '$(arrow-right)' };  // stored in var because auto-format adds spaces to hypens
     return {
         detail: setting.overwritesValue
-            ? `${icons.exclamationPoint} Overwrites existing value: '${setting.oldValue}' with '${setting.value}'`
+            ? icons.exclamationPoint + ' ' + vscode.l10n.t(`Overwrites existing value: '{0}' with '{1}'`, setting.oldValue, setting.value)
             : '',
         label: sublimeName
             ? `${sublimeName} ${icons.arrowRight} ${setting.name}`
@@ -122,7 +142,7 @@ function setting2QuickPickItem(setting: VscodeSetting, sublimeName?: string): IS
 async function importSettings(settings: ISetting[]): Promise<void> {
     return vscode.window.withProgress({
         location: vscode.ProgressLocation.Notification,
-        title: 'Importing Settings',
+        title: vscode.l10n.t('Importing Settings'),
     }, async (progress) => {
         progress.report({ increment: 0 });
         const incrementSize = 100.0 / settings.length;
@@ -131,7 +151,7 @@ async function importSettings(settings: ISetting[]): Promise<void> {
             try {
                 await config.update(setting.name, setting.value, vscode.ConfigurationTarget.Global);
                 progress.report({ increment: incrementSize, message: setting.name });
-            } catch (e) {
+            } catch (e: any) {
                 vscode.window.showErrorMessage(e.message);
                 return;
             }
