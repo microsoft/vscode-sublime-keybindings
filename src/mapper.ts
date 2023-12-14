@@ -25,7 +25,7 @@ export class Mapper {
         try {
             parsedSublimeSettings = rjson.parse(sublimeSettings);
         } catch (e) {
-            vscode.window.showErrorMessage('The sublime settings file could not be parsed. Please check if it contains syntax errors.');
+            vscode.window.showErrorMessage(vscode.l10n.t('The sublime settings file could not be parsed. Please check if it contains syntax errors.'));
             throw (e);
         }
         return this.mapAllSettings(settingsMappings, parsedSublimeSettings);
@@ -95,7 +95,7 @@ export class Mapper {
             const configTest = this.checkWithExistingSettings(defaultSetting, config);
 
             if (configTest.alreadyExists) {
-                settings.alreadyExisting.push(new MappedSetting({ name: 'Default Setting', value: '' }, defaultSetting));
+                settings.alreadyExisting.push(new MappedSetting({ name: vscode.l10n.t('Default Setting'), value: '' }, defaultSetting));
             } else {
                 if (configTest.existingValue) {
                     defaultSetting.markAsOverride(configTest.existingValue);
@@ -125,7 +125,13 @@ export class Mapper {
             } else if (typeof mappedValue === 'object') {
                 const obj = mappedValue[sublimeSetting.value];
                 if (!obj) {
-                    vscode.window.showErrorMessage(`Failed to parse setting: '${sublimeSetting.name}: ${sublimeSetting.value}'. Please check if it contains syntax errors`);
+                    vscode.window.showErrorMessage(vscode.l10n.t(
+                        {
+                            message: "Failed to parse setting: '{0}: {1}'. Please check if it contains syntax errors",
+                            args: [sublimeSetting.name, sublimeSetting.value],
+                            comment: ["{0} is the name of the setting, {1} is the value of the setting"]
+                        }
+                    ));
                     return undefined;
                 }
                 const keys = Object.keys(obj);
