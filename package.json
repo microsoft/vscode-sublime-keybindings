@@ -586,6 +586,13 @@
                 "command": "editor.action.smartSelect.grow",
                 "key": "ctrl+shift+space",
                 "when": "editorTextFocus"
+            },
+            {
+                "mac": "ctrl+cmd+p",
+                "win": "ctrl+alt+p",
+                "linux": "ctrl+alt+p",
+                "key": "ctrl+alt+p",
+                "command": "workbench.action.openRecent"
             }
         ]
     }
