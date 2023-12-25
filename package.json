@@ -478,7 +478,7 @@
                 "win": "alt+left",
                 "linux": "ctrl+alt+left",
                 "key": "ctrl+alt+left",
-                "command": "cursorWordStartLeft",
+                "command": "cursorWordPartLeft",
                 "when": "editorTextFocus"
             },
             {
@@ -486,7 +486,7 @@
                 "win": "alt+right",
                 "linux": "ctrl+alt+right",
                 "key": "ctrl+alt+right",
-                "command": "cursorWordEndRight",
+                "command": "cursorWordPartRight",
                 "when": "editorTextFocus"
             },
             {
@@ -494,7 +494,7 @@
                 "win": "alt+shift+left",
                 "linux": "ctrl+alt+shift+left",
                 "key": "ctrl+alt+shift+left",
-                "command": "cursorWordStartLeftSelect",
+                "command": "cursorWordPartLeftSelect",
                 "when": "editorTextFocus"
             },
             {
@@ -502,8 +502,28 @@
                 "win": "alt+shift+right",
                 "linux": "ctrl+alt+shift+right",
                 "key": "ctrl+alt+shift+right",
-                "command": "cursorWordEndRightSelect",
+                "command": "cursorWordPartRightSelect",
                 "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+left",
+                "command": "cursorWordPartLeft",
+                "when": "editorTextFocus && isMac"
+            },
+            {
+                "key": "ctrl+right",
+                "command": "cursorWordPartRight",
+                "when": "editorTextFocus && isMac"
+            },
+            {
+                "key": "ctrl+shift+left",
+                "command": "cursorWordPartLeftSelect",
+                "when": "editorTextFocus && isMac"
+            },
+            {
+                "key": "ctrl+shift+right",
+                "command": "cursorWordPartRightSelect",
+                "when": "editorTextFocus && isMac"
             },
             {
                 "mac": "cmd+j",
