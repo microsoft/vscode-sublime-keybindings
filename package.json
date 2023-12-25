@@ -586,6 +586,22 @@
                 "command": "editor.action.smartSelect.grow",
                 "key": "ctrl+shift+space",
                 "when": "editorTextFocus"
+            },
+            {
+                "mac": "cmd+alt+g",
+                "linux": "ctrl+f3",
+                "win": "ctrl+f3",
+                "key": "ctrl+f3",
+                "command": "editor.action.nextSelectionMatchFindAction",
+                "when": "editorTextFocus",
+            },
+            {
+                "mac": "cmd+alt+shift+g",
+                "linux": "ctrl+shift+f3",
+                "win": "ctrl+shift+f3",
+                "key": "ctrl+shift+f3",
+                "command": "editor.action.previousSelectionMatchFindAction",
+                "when": "editorTextFocus",
             }
         ]
     }
