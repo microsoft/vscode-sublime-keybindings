@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import * as rjson from 'relaxed-json';
+import { parse as jsoncParse } from 'jsonc-parser';
 import * as vscode from 'vscode';
 import { readFileAsync } from './fsWrapper';
 import { ISetting, MappedSetting, CategorizedSettings, VscodeSetting } from './settings';
@@ -23,7 +23,7 @@ export class Mapper {
         const settingsMappings = await this.getSettings();
         let parsedSublimeSettings;
         try {
-            parsedSublimeSettings = rjson.parse(sublimeSettings);
+            parsedSublimeSettings = jsoncParse(sublimeSettings);
         } catch (e) {
             vscode.window.showErrorMessage(vscode.l10n.t('The sublime settings file could not be parsed. Please check if it contains syntax errors.'));
             throw (e);
@@ -37,8 +37,8 @@ export class Mapper {
             const [mappingsFile, defaultsFile] = await Promise.all([readFileAsync(resolve(__dirname, '..', 'settings/mappings.json'), 'utf-8'), 
                                                                     readFileAsync(resolve(__dirname, '..', 'settings/defaults.json'), 'utf-8')]);
             this.settings = {
-                mappings: rjson.parse(mappingsFile),
-                defaults: (rjson.parse(defaultsFile) as [[string, any]]).map((setting) => new VscodeSetting(setting[0], setting[1])),
+                mappings: jsoncParse(mappingsFile),
+                defaults: (jsoncParse(defaultsFile) as [[string, any]]).map((setting) => new VscodeSetting(setting[0], setting[1])),
             };
         }
         return this.settings;
