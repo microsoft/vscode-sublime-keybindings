@@ -97,7 +97,14 @@ function validate(settingsFilePath: string): boolean {
 }
 
 async function getSettings(sublimeSettingsPath: string): Promise<CategorizedSettings> {
-    const settings: CategorizedSettings | undefined = await mapper.getMappedSettings(await readFileAsync(sublimeSettingsPath, 'utf-8'));
+    let fileContents: string;
+    try {
+        fileContents = await readFileAsync(sublimeSettingsPath, 'utf-8');
+    } catch (e: any) {
+        vscode.window.showErrorMessage(vscode.l10n.t('Could not read Sublime settings file: {0}', e.message));
+        throw e;
+    }
+    const settings: CategorizedSettings | undefined = await mapper.getMappedSettings(fileContents);
     settings.mappedSettings.sort((a, b) => {
         if (a.vscode.overwritesValue && b.vscode.overwritesValue) {
             return a.sublime.name.localeCompare(b.sublime.name);
