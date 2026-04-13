@@ -42,7 +42,7 @@ export class Mapper {
                     readFileAsync(resolve(__dirname, '..', 'settings/defaults.json'), 'utf-8'),
                 ]);
             } catch (e: any) {
-                vscode.window.showErrorMessage(vscode.l10n.t('Could not read settings files: {0}', e.message));
+                vscode.window.showErrorMessage(vscode.l10n.t('Could not read Sublime extension settings files: {0}', e.message));
                 throw e;
             }
             this.settings = {
