@@ -34,8 +34,17 @@ export class Mapper {
     private async getSettings(): Promise<IMapperSettings> {
         if (!this.settings) {
             // make sure set node: false in /build/node_extension.webpack.config.json so that __dirname is correct
-            const [mappingsFile, defaultsFile] = await Promise.all([readFileAsync(resolve(__dirname, '..', 'settings/mappings.json'), 'utf-8'), 
-                                                                    readFileAsync(resolve(__dirname, '..', 'settings/defaults.json'), 'utf-8')]);
+            let mappingsFile: string;
+            let defaultsFile: string;
+            try {
+                [mappingsFile, defaultsFile] = await Promise.all([
+                    readFileAsync(resolve(__dirname, '..', 'settings/mappings.json'), 'utf-8'),
+                    readFileAsync(resolve(__dirname, '..', 'settings/defaults.json'), 'utf-8'),
+                ]);
+            } catch (e: any) {
+                vscode.window.showErrorMessage(vscode.l10n.t('Could not read Sublime extension settings files: {0}', e.message));
+                throw e;
+            }
             this.settings = {
                 mappings: jsoncParse(mappingsFile),
                 defaults: (jsoncParse(defaultsFile) as [[string, any]]).map((setting) => new VscodeSetting(setting[0], setting[1])),
