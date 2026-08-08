@@ -211,7 +211,9 @@
         "Vietnamese (Windows 1258)": {
             "files.encoding": "windows1258"
         }
-    }
+    },
+    "highlight_modified_tabs": "workbench.editor.highlightModifiedTabs", // Boolean
+    "show_minimap": "editor.minimap.enabled" // Boolean
     // "folder_exclude_patterns": "files.exclude",
     // "file_exclude_patterns": "files.exclude",
     // "color_scheme": "workbench.colorTheme",
@@ -220,4 +222,5 @@
     // "caret_style": "editor.cursorBlinking",
     // "auto_complete": "editor.quickSuggestions",
     // "find_selected_text": "autoFindInSelection", // Boolean
+    // "translate_tabs_to_spaces": "editor.insertSpaces", // Boolean
 }
